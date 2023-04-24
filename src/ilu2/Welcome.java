@@ -8,9 +8,14 @@ public class Welcome {
 		if (isempty(nom)) {
 			retour.append("my friend");
 		}
-		else if (nom.equals("bob")) {
-			retour.append("Bob");
-		}
+		String[] nameList = nom.trim().split("\\s+");
+        if (nameList.length == 1) {
+           retour.append(nameList[0]);
+           }
+        else if (nameList.length == 2) {
+        	retour.append(nameList[1]);
+        }
+        
 		else if (nom.equals("JERRY")) {
 			retour.toString().toUpperCase();
 			retour.append("JERRY");

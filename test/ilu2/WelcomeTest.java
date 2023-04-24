@@ -17,7 +17,7 @@ class WelcomeTest {
 	
 	@Test
 	void test1() {
-		assertEquals(Welcome.affichage("bob"),"Hello,Bob");
+		assertEquals(Welcome.affichage("bob"),"Hello,bob");
 	}
 	
 	void test2() {
@@ -28,5 +28,10 @@ class WelcomeTest {
 	
 	void test3() {
 		assertEquals(Welcome.affichage("JERRY"),"HELLO, JERRY");
+	}
+	
+	void test4() {
+		assertEquals(Welcome.affichage("Amy,Bob"),"Hello, Amy, Bob”");
+		
 	}
 }
