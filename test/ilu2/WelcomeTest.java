@@ -24,6 +24,9 @@ class WelcomeTest {
 		assertEquals(Welcome.affichage(" "),"Hello, my friend");
 		assertEquals(Welcome.affichage("bob"),"Hello,Bob");
 		assertEquals(Welcome.affichage("  "),"Hello, my friend");
-		
+	}
+	
+	void test3() {
+		assertEquals(Welcome.affichage("JERRY"),"HELLO, JERRY");
 	}
 }

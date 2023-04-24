@@ -11,6 +11,10 @@ public class Welcome {
 		else if (nom.equals("bob")) {
 			retour.append("Bob");
 		}
+		else if (nom.equals("JERRY")) {
+			retour.toString().toUpperCase();
+			retour.append("JERRY");
+		}
 		return retour.toString();
 
 	}
