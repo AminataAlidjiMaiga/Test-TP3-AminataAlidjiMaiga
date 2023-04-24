@@ -10,16 +10,16 @@ public class Welcome {
 		if (isempty(nom)) {
 			retour.append("my friend");
 		}
-		else if (nom.equals("JERRY")) {
-			retour.toString().toUpperCase();
-			retour.append("JERRY");
-		}
 		String[] nameList = nom.trim().split("\\s+");
 		if (nameList.length==1) {
+			if (nameList[0].equals(nameList[0].toUpperCase())) {
+				retour.toString().toUpperCase();
+				retour.append(nom);
+			}
 			retour.append(nameList[0]);
 		}
 		else {
-			for (int i=0;i<nameList.length;i++) {
+			for (int i=0;i<(nameList.length)-1;i++) {
 				if (nameList[i].equals(nameList[i].toUpperCase()))
 				{
 					maj.append(nameList[i]);
@@ -28,6 +28,9 @@ public class Welcome {
 					retour.append(nameList[i]);
 				}	
 			}
+			maj.append("!");
+			retour.append("and");
+			retour.append(nameList[-1]);
 			retour.append(maj);
 		}
 		return retour.toString();

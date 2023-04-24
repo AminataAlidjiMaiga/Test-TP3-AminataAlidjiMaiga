@@ -42,4 +42,9 @@ class WelcomeTest {
 		assertEquals(Welcome.affichage("Amy, BOB, Jerry"),"Hello, Amy, Jerry. AND HELLO, BOB !");
 		assertEquals(Welcome.affichage("Amy, BOB, TOM, Jerry"),"Hello, Amy, Jerry. AND HELLO, BOB, TOM !");
 	}
+	void test7() {
+		assertEquals(Welcome.affichage("Bob, Amy, Jerry"),"Hello, Amy and Jerry!");
+		assertEquals(Welcome.affichage("Bob, AMY, Jerry, JACK"),"Hello, bob and jerry AND HELLO AMY AND JACK !");
+		assertEquals(Welcome.affichage("Bob, AMY, Jerry, JACK, TOM, Aminata"),"Hello, bob,jerry and Aminata. AND HELLO AMY AND JACK AND TOM !");
+	}
 }
