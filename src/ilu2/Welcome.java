@@ -4,21 +4,31 @@ public class Welcome {
 
 	public static String affichage(String nom) {
 		StringBuilder retour = new StringBuilder();
+		StringBuilder maj= new StringBuilder();
 		retour.append("Hello,");
+		maj.append(". AND HELLO,");
 		if (isempty(nom)) {
 			retour.append("my friend");
 		}
-		String[] nameList = nom.trim().split("\\s+");
-        if (nameList.length == 1) {
-           retour.append(nameList[0]);
-           }
-        else if (nameList.length == 2) {
-        	retour.append(nameList[1]);
-        }
-        
 		else if (nom.equals("JERRY")) {
 			retour.toString().toUpperCase();
 			retour.append("JERRY");
+		}
+		String[] nameList = nom.trim().split("\\s+");
+		if (nameList.length==1) {
+			retour.append(nameList[0]);
+		}
+		else {
+			for (int i=0;i<nameList.length;i++) {
+				if (nameList[i].equals(nameList[i].toUpperCase()))
+				{
+					maj.append(nameList[i]);
+				}
+				else {
+					retour.append(nameList[i]);
+				}	
+			}
+			retour.append(maj);
 		}
 		return retour.toString();
 

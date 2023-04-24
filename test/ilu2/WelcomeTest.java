@@ -34,4 +34,12 @@ class WelcomeTest {
 		assertEquals(Welcome.affichage("Amy,Bob"),"Hello, Amy, Bob”");
 		
 	}
+	void test5() {
+		assertEquals(Welcome.affichage("Amy,Bob,Jerry"),"Hello, Amy, Bob, Jerry”");
+		assertEquals(Welcome.affichage("Amy,Bob,Jerry,Tom,Bambi"),"Hello, Amy, Bob, Jerry, Tom, Bambi");
+	}
+	void test6() {
+		assertEquals(Welcome.affichage("Amy, BOB, Jerry"),"Hello, Amy, Jerry. AND HELLO, BOB !");
+		assertEquals(Welcome.affichage("Amy, BOB, TOM, Jerry"),"Hello, Amy, Jerry. AND HELLO, BOB, TOM !");
+	}
 }
