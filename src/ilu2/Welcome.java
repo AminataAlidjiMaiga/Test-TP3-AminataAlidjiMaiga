@@ -10,7 +10,9 @@ public class Welcome {
 		if (isempty(nom)) {
 			retour.append("my friend");
 		}
-		String[] nameList = nom.trim().split("\\s+");
+		// Suppression des espaces inutiles
+	    nom = nom.trim().replaceAll("\\s+", " ");
+		String[] nameList = nom.split(",");
 		if (nameList.length==1) {
 			if (nameList[0].equals(nameList[0].toUpperCase())) {
 				retour.toString().toUpperCase();
