@@ -143,4 +143,28 @@ public class Welcome {
 	return x;
 
 	}
+	
+	public static boolean isYoda(String[] list) {
+		boolean res=false;
+		for(int i=0;i<(list.length);i++) {
+			if(list[i].equals("Yoda") || list[i].equals("YODA"))
+			{
+				res=true;
+			}
+		}
+		return res;
+	}
+	
+	public static String traitementYoda(String list) {
+		StringBuilder retour = new StringBuilder();
+		retour.append("Hello");
+		list=list.trim().replaceAll("\\s+", "");
+		String[] name = list.split(",");
+		for (int i=0;i<name.length;i++) {
+			if majhere(name[i]) {
+				
+			}
+		}
+		return null;
+	}
 }
