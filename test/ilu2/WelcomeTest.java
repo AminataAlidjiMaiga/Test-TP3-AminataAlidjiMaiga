@@ -17,46 +17,43 @@ class WelcomeTest {
 	
 	@Test
 	void test1() {
-		assertEquals(Welcome.affichage("bob"),"Hello,Bob");
+		assertEquals(Welcome.welcome("bob"),"Hello,Bob");
 	}
-	
 	@Test
 	void test2() {
-		assertEquals(Welcome.affichage(" "),"Hello,my friend");
-		assertEquals(Welcome.affichage("  "),"Hello,my friend");
+		assertEquals(Welcome.welcome(" "),"Hello, my friend");
+		assertEquals(Welcome.welcome("  "),"Hello, my friend");
 	}
+
 	@Test
 	void test3() {
-		assertEquals(Welcome.affichage("JERRY"),"HELLO,JERRY !");
+		assertEquals(Welcome.welcome("JERRY"),"HELLO,JERRY !");
 	}
-	
+
 	@Test
 	void test4() {
-		assertEquals(Welcome.affichage("Amy,Bob"),"Hello,Amy,Bob");
-		assertEquals(Welcome.affichage("aminata,dina"),"Hello,Aminata,Dina");
+		assertEquals(Welcome.welcome("Amy,Bob"),"Hello,Amy,Bob");
+		assertEquals(Welcome.welcome("amy,bob"),"Hello,Amy,Bob");
 	}
-	
-	@Test
+	/*@Test
 	void test5() {
-		assertEquals(Welcome.affichage("Amy,Bob,Jerry"),"Hello,Amy,Bob,Jerry");
-		assertEquals(Welcome.affichage("Amy,Bob,Jerry,Tom,Bambi"),"Hello,Amy,Bob,Jerry,Tom,Bambi");
-	}
-	
+		assertEquals(Welcome.welcome("Amy,bob,Jerry"),"Hello,Amy,Bob,Jerry");
+		assertEquals(Welcome.welcome("amy,Bob,jerry,Tom,bambi"),"Hello,Amy,Bob,Jerry,Tom,Bambi");
+		System.out.println("Test 5 OK");
+	}*/
+
+	////Test 5 en contradiction avec le test 7
+
 	@Test
 	void test6() {
-		assertEquals(Welcome.affichage("Amy, BOB, Jerry"),"Hello, Amy, Jerry. AND HELLO, BOB!");
+		assertEquals(Welcome.welcome("Amy,BOB,Jerry"),"Hello,Amy,Jerry.AND HELLO,BOB !");
 	}
 	
+	
+	@Test
 	void test7() {
-		assertEquals(Welcome.affichage("Bob, Amy, Jerry"),"Hello, Amy and Jerry");
-		assertEquals(Welcome.affichage("Bob, AMY, Jerry, JACK"),"Hello, bob and jerry AND HELLO AMY AND JACK !");
-		assertEquals(Welcome.affichage("Bob, AMY, Jerry, JACK, TOM, Aminata"),"Hello, bob,jerry and Aminata. AND HELLO AMY AND JACK AND TOM !");
-		assertEquals(Welcome.affichage("Amy, BOB, TOM, Jerry"),"Hello, Amy, Jerry. AND HELLO, BOB, TOM !");
-	}
-	
-	void test8() {
-		assertEquals(Welcome.affichage("bob , Amy    "),"“Hello, Bob and Amy");
-		assertEquals(Welcome.affichage("Bob, AMY,         Jerry,       JACK, TOM,       Aminata"),"Hello, bob,jerry and Aminata. AND HELLO AMY AND JACK AND TOM !");
-
+		assertEquals(Welcome.welcome("bob,amy,jerry"),"Hello,Bob,Amy and Jerry");
+		assertEquals(Welcome.welcome("Bob,AMY,Jerry,JACK"),"Hello,Bob and Jerry.AND HELLO,AMY AND JACK !");
+		assertEquals(Welcome.welcome("Bob,AMY,Jerry,JACK,TOM,Aminata"),"Hello,Bob,Jerry and Aminata.AND HELLO,AMY,JACK AND TOM !");
 	}
 }
